@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "e5516358-f1d0-4299-b017-e6dec15ca90a",
+		"name": "Vacation Management Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "170067"
+	},
+	"item": [
+		{
+			"name": "Employee Controller",
+			"item": [
+				{
+					"name": "Employee requests: Filter by status (approved, pending, rejected)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/employees/2f8c7305-08e7-4ed5-a998-089ef1672c25/vacations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"employees",
+								"2f8c7305-08e7-4ed5-a998-089ef1672c25",
+								"vacations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employee number of remaining vacation days",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/employees/2f8c7305-08e7-4ed5-a998-089ef1672c25/remaining-vacations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"employees",
+								"2f8c7305-08e7-4ed5-a998-089ef1672c25",
+								"remaining-vacations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create employees",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"id\": null,\n        \"full_name\": \"Manager One\",\n        \"remaining_vacation_days\": \"30\",\n        \"title\": \"MANAGER\"\n    },\n    {\n        \"id\": null,\n        \"full_name\": \"Manager Two\",\n        \"remaining_vacation_days\": \"30\",\n        \"title\": \"MANAGER\"\n    },\n    {\n        \"id\": null,\n        \"full_name\": \"Worker One\",\n        \"remaining_vacation_days\": \"30\",\n        \"title\": \"WORKER\"\n    },\n    {\n        \"id\": null,\n        \"full_name\": \"Worker Two\",\n        \"remaining_vacation_days\": \"30\",\n        \"title\": \"WORKER\"\n    },\n        {\n        \"id\": null,\n        \"full_name\": \"Worker Three\",\n        \"remaining_vacation_days\": \"30\",\n        \"title\": \"WORKER\"\n    },\n    {\n        \"id\": null,\n        \"full_name\": \"Worker Four\",\n        \"remaining_vacation_days\": \"30\",\n        \"title\": \"WORKER\"\n    },\n    {\n        \"id\": null,\n        \"full_name\": \"Worker Five\",\n        \"remaining_vacation_days\": \"30\",\n        \"title\": \"WORKER\"\n    },\n    {\n        \"id\": null,\n        \"full_name\": \"Worker Six\",\n        \"remaining_vacation_days\": \"30\",\n        \"title\": \"WORKER\"\n    },\n        {\n        \"id\": null,\n        \"full_name\": \"Worker Seven\",\n        \"remaining_vacation_days\": \"30\",\n        \"title\": \"WORKER\"\n    },\n    {\n        \"id\": null,\n        \"full_name\": \"Worker Eigth\",\n        \"remaining_vacation_days\": \"30\",\n        \"title\": \"WORKER\"\n    },\n        {\n        \"id\": null,\n        \"full_name\": \"Worker Nine\",\n        \"remaining_vacation_days\": \"30\",\n        \"title\": \"WORKER\"\n    },\n    {\n        \"id\": null,\n        \"full_name\": \"Worker Ten\",\n        \"remaining_vacation_days\": \"30\",\n        \"title\": \"WORKER\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new vacation request if they have not exhausted their total limit (30 per year) Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": null,\n  \"author\": \"775532f2-5e72-4711-a43e-e2d0aa90b1c9\",\n  \"resolved_by\": \"59f8f3f1-94b0-41d8-ac53-9554d1176104\",\n  \"requested_days\": 15,\n  \"vacation_start_date\": \"2024-08-10T00:00:00.000Z\",\n  \"vacation_end_date\": \"2024-08-25T00:00:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/employees/vacation-request",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"employees",
+								"vacation-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new list of vacation requests if they have not exhausted their total limit (30 per year)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n   {\n      \"id\": null,\n      \"author\": \"2f8c7305-08e7-4ed5-a998-089ef1672c25\",\n      \"resolved_by\": \"2923b9d2-89d5-4c5d-86ea-c33194f70835\",\n      \"requested_days\": 15,\n      \"vacation_start_date\": \"2024-08-10T00:00:00.000Z\",\n      \"vacation_end_date\": \"2024-08-25T00:00:00.000Z\"\n   },\n   {\n      \"id\":null,\n      \"author\": \"2f34e133-1d50-4b1d-b39b-a1acd1daacca\",\n      \"resolved_by\": \"2923b9d2-89d5-4c5d-86ea-c33194f70835\",\n      \"requested_days\": 15,\n      \"vacation_start_date\": \"2024-08-10T00:00:00.000Z\",\n      \"vacation_end_date\": \"2024-08-25T00:00:00.000Z\"\n   },\n   {\n      \"id\":null,\n      \"author\": \"45f392b9-f81e-4957-a6eb-e2a7b9d07c53\",\n      \"resolved_by\": \"2923b9d2-89d5-4c5d-86ea-c33194f70835\",\n      \"requested_days\": 15,\n      \"vacation_start_date\": \"2024-08-10T00:00:00.000Z\",\n      \"vacation_end_date\": \"2024-08-25T00:00:00.000Z\"\n   },\n   {\n      \"id\":null,\n      \"author\": \"a5ee32c7-3b2a-4ecb-8a1b-c9a87f935179\",\n      \"resolved_by\":\"2923b9d2-89d5-4c5d-86ea-c33194f70835\",\n      \"requested_days\":15,\n      \"vacation_start_date\":\"2024-08-10T00:00:00.000Z\",\n      \"vacation_end_date\":\"2024-08-25T00:00:00.000Z\"\n   },\n   {\n      \"id\":null,\n      \"author\": \"5fa60cd3-0d14-41f8-9a42-70ae8a534db5\",\n      \"resolved_by\": \"2923b9d2-89d5-4c5d-86ea-c33194f70835\",\n      \"requested_days\": 15,\n      \"vacation_start_date\": \"2024-08-10T00:00:00.000Z\",\n      \"vacation_end_date\": \"2024-08-25T00:00:00.000Z\"\n   }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/employees/vacation-requests",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"employees",
+								"vacation-requests"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manager Controller",
+			"item": [
+				{
+					"name": "All requests: Filter by pending and approved",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/manager/vacations/overview",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"manager",
+								"vacations",
+								"overview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "An overview for each individual employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/manager/2f8c7305-08e7-4ed5-a998-089ef1672c25/vacations-overview",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"manager",
+								"2f8c7305-08e7-4ed5-a998-089ef1672c25",
+								"vacations-overview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "An overview of overlapping requests",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vacation_start_date\": \"2024-07-01T00:00:00.000Z\",\n    \"vacation_end_date\" :  \"2024-09-01T00:00:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/manager/vacations-overlapping-overview?vacation_start_date=2024-07-01T00:00:00.000Z&vacation_end_date=2024-08-01T00:00:00.000Z",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"manager",
+								"vacations-overlapping-overview"
+							],
+							"query": [
+								{
+									"key": "vacation_start_date",
+									"value": "2024-07-01T00:00:00.000Z"
+								},
+								{
+									"key": "vacation_end_date",
+									"value": "2024-08-01T00:00:00.000Z"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Process an individual request and either approve or reject it",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/manager/vacations-request/de13b20b-99b8-4095-bcbd-33b2fe04bbf0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"manager",
+								"vacations-request",
+								"de13b20b-99b8-4095-bcbd-33b2fe04bbf0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
