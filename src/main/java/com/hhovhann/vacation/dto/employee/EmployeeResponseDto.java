@@ -15,25 +15,40 @@ import java.util.UUID;
 @Setter
 @Builder
 public class EmployeeResponseDto {
-    @JsonProperty("id")
-    @Schema(name = "Employee ID", example = "2f8c7305-08e7-4ed5-a998-089ef1672c25", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-    UUID entityId;
+  @JsonProperty("id")
+  @Schema(
+      name = "id",
+      example = "2f8c7305-08e7-4ed5-a998-089ef1672c25",
+      requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  UUID entityId;
 
-    @JsonProperty("full_name")
-    @Schema(name = "Employee full name", example = "Worker One | Manager One", requiredMode = Schema.RequiredMode.REQUIRED)
-    String fullName;
+  @JsonProperty("full_name")
+  @Schema(
+      name = "full_name",
+      example = "Worker One | Manager One",
+      requiredMode = Schema.RequiredMode.REQUIRED)
+  String fullName;
 
-    @JsonProperty("remaining_vacation_days")
-    @Schema(name = "Employee remaining vacation days", example = "15", defaultValue = "30", requiredMode = Schema.RequiredMode.REQUIRED)
-    Integer remainingVacationDays;
+  @JsonProperty("remaining_vacation_days")
+  @Schema(
+      name = "remaining_vacation_days",
+      example = "15",
+      defaultValue = "30",
+      requiredMode = Schema.RequiredMode.REQUIRED)
+  Integer remainingVacationDays;
 
-    @JsonProperty("title")
-    @Schema(name = "Employee title", example = "MANAGER | WORKER", requiredMode = Schema.RequiredMode.REQUIRED)
-    Title title;
+  @JsonProperty("title")
+  @Schema(
+      name = "Employee title",
+      example = "MANAGER | WORKER",
+      requiredMode = Schema.RequiredMode.REQUIRED)
+  Title title;
 
-    @JsonProperty("vacations")
-    @Schema(name = "Employee list of vacation requests",
-            example = """
+  @JsonProperty("vacations")
+  @Schema(
+      name = "vacations",
+      example =
+          """
                             [
                                 {
                                     "id": "0e6f1c2c-d2bf-49da-9c98-1a0a5cb9a907",
@@ -55,7 +70,7 @@ public class EmployeeResponseDto {
                                 }
                             ]
                     """,
-            defaultValue = "[]",
-            requiredMode = Schema.RequiredMode.REQUIRED)
-    private List<VacationRequest> vacationRequests;
+      defaultValue = "[]",
+      requiredMode = Schema.RequiredMode.REQUIRED)
+  private List<VacationRequest> vacationRequests;
 }
